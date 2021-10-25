@@ -6,32 +6,36 @@
 # 첫줄에 자연수의 개수 N이 주어지고 그 다음 줄에 N개의 자연수가 주어짐
 # 자연수의 크기는 100,000을 넘지 않아야하고 N의 범위는 3보다 크거나 같고 100보다 작거나 같은 수
 
+# @ 나의 문제해결
+# @@ 오류 발생 원인 - 너무 꼬아서 생각해 문제를 해결할 수 없었음 (2021.10.25)
+
 def reverse(x):
-    k = int(str(x)[::-1]) #요기 다시 공부하기!
-    return k
+    value = 0
+    while x>0:
+        y = x%10
+        value = value*10 + y
+        x = x//10
+    return value
 
 def isPrime(x):
-    if x==3:
-        return x
-    elif x%2!=0 and x%3!=0 and x%5!=0:
-        return x
-    else:
+    if x==1:
         return False
+    for i in range(2,x):
+        if x % i == 0:
+            return False
+    return True
 
 def main():
     n = int(input())
-    num_list = [int(i) for i in input().split()]
-    reverse_num = []
-    Prime_num = []
-
-    for i in num_list:
-        reverse_num.append(reverse(i))
-
-    for j in reverse_num:
-        Prime_num.append(isPrime(j))
-    result = [value for index,value in enumerate(Prime_num) if Prime_num[index]!=False]
-    print(result)
-
+    n_list = [int(i) for i in input().split()]
+    
+    for a in n_list:
+        tmp = reverse(a)
+        
+        if isPrime(tmp)==True:
+            print(tmp, end=' ')
 main()
 
-#main함수 안쓰고 할 수 있는 방법 다시 찾아보기
+"""
+@ 다른 해결방식 @
+"""

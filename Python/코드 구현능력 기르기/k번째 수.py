@@ -3,18 +3,31 @@
 # 각 케이스별 첫 번째 줄의 자연수 N, s, e, k
 # 두 번째 줄에는 N개의 숫자가 주어짐
 
+# @ 나의 문제해결
 t = int(input())
 
 def case():
     t_list = []
     for i in range(t):
-        n, s, e, k = map(int, input().split())
+        N, s, e, k = map(int, input().split())
         num_list = [int(n) for n in input().split()]
         del num_list[e:]
         del num_list[:s-1]
-        #print(num_list)
+        print(num_list)
         num_list.sort()
+        print(num_list)
         t_list.append(num_list[k-1])
     for j in range(t):
         print("#",j+1,":",t_list[j])
 case()
+
+"""
+@ 다른 해결방식 @
+T = int(input())
+for t in range(T):
+    n, s, e, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    a = a[s-1:e] #del대신 슬라이스 사용
+    a.sort()
+    print("#%d %d" %(t+1, a[k-1]))
+"""
