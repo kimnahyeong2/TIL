@@ -11,12 +11,15 @@
 N = int(input())
 N_list = list(map(int, input().split()))
 score = 0
+cnt = -1
 bonus = 0
 total = 0
-for i in range(N-1):
+for i in range(N):
     if(N_list[i]==1):
         score = score + 1
-        if(N_list[i+1]==1):
-            bonus = bonus + 1
+        cnt = cnt + 1
+        bonus = bonus + cnt
+    else:
+        cnt = -1
 total = score + bonus
 print(total)
