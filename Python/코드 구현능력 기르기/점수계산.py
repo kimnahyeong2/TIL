@@ -2,12 +2,12 @@
 # 1번 문제가 맞는 경우 1점으로 계산
 # 답을 틀렸다가 답이 맞을 경우도 1점으로 계산
 # 연속적으로 문제의 답이 맞는 경우 2번째는 2점, 3번째는 3점
-# 틀린문제는 0점으로 계싼
+# 틀린문제는 0점으로 계산
 # 첫번째 줄에 문제의 개수 N이 주어짐
 # 두번째 줄에는 N개 문제의 채점 결과를 나타냐는 0 혹은 1이 빈칸을 사이에 두고 주어짐
 # 0은 문제의 답이 틀렸을 경우, 1은 문제의 답이 맞는 경우
 # 입력에서 주어진 채점 결과에 가산점으 고려한 총 점수를 출력
-
+# @ 나의 문제해결
 N = int(input())
 N_list = list(map(int, input().split()))
 score = 0
@@ -23,3 +23,18 @@ for i in range(N):
         cnt = -1
 total = score + bonus
 print(total)
+
+"""
+@ 다른 해결방식 @
+n = int(input())
+a = list(map(int, input().split()))
+sum = 0
+cnt = 0
+for x in a:
+    if x == 1:
+        cnt += 1
+        sum += cnt
+    else:
+        cnt = 0
+print(sum)
+"""

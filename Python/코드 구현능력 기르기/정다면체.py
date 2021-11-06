@@ -1,7 +1,7 @@
 # 두 개의 정 N면체와 정 M면체의 두 개의 주사위를 던져서 나올 수 있는 눈의 합 중 가장 확률이 높은 숫자를 출력하는 프로그램을 작성하세요.
 # 정답이 여러 개일 경우 오름차순으로 출력합니다.
 # 첫 번째 줄에는 자연수 N과 M이 주어집니다. N과 M은 4, 6, 8, 12, 20 중의 하나입니다.
-
+# @ 나의 문제해결
 while True:
     n,m = input().split()
     if n and m in ['4','6','8','12','20']:
@@ -25,3 +25,21 @@ def persent():
         if value == max(sum_list):
             print(index, end=' ')
 persent()
+
+"""
+@ 다른 해결방식 @
+n, m = map(int, input().split())
+cnt = [0]*(n+m+3) # +3을 해주어 넉넉히 크기 잡아주기
+max = 0
+
+for i in range(1, n+1):
+    for j in range(1, m+1):
+        cnt[i+j] += 1
+
+for i in range(n+m+1):
+    if cnt[i] > max:
+        max = cnt[i]
+for i in range(n+m+1):
+    if cnt[i] == max:
+        print(i, end=' ')
+"""

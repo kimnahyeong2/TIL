@@ -14,7 +14,7 @@
 - 다수의 소수를 찾아야 하는 문제에서 효과적으로 사용될 수 있다
 - 하지만 소수 여부를 저장해야 하므로 메모리가 많이 필요하다
 """
-
+# @ 나의 문제해결
 import time
 import datetime
 
@@ -22,14 +22,25 @@ n = int(input())
 start = time.time()
 num_list = [True] * (n+1)
 sum=0
-value=[]
 #소수라면 true. 소수가 아니라면 false으로 값 넣어주기
 for i in range(2,n+1):
     if num_list[i]==True:
         sum = sum+1
-        value.append(i)
         for k in range(i,n+1,i):
             num_list[k]=False
 print(sum)
 end = time.time()
 print(f"{end-start:.05f}sec")
+
+"""
+@ 다른 해결방식 @
+n = int(input())
+ch = [0] * (n+1)
+cnt = 0
+for i in range(2, n+1):
+    if ch[i] == 0:
+        cnt += 1
+        for j in range(i, n+1, i):
+            ch[j] = 1
+print(cnt)
+"""

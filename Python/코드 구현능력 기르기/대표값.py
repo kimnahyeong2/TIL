@@ -5,6 +5,7 @@
 # 첫줄에 자연수 N(5<=N<=100)이 주어지고, 두 번째 줄에는 각 학생의 수학점수인 N개의 자연수가 주어집니다.
 # 학생의 번호는 앞에서부터 1로 시작해서 N까지이다.
 
+# @ 나의 문제해결
 def student_score():
     n = int(input())
     score_list = [int(n) for n in input().split()] #입력하는 숫자를 배열에 공백을 기준으로 나누어 집어넣어주기
@@ -21,6 +22,30 @@ def student_score():
             if value>score:
                 score = value
                 best = idex+1
-    print(avg, best, score)
+    print(avg, best)
 
 student_score()
+"""
+@ 다른 해결방식 @ --> 나의 문제해결 방식과 유사!
+n = int(input())
+a = list(map(int, input().split()))
+# ave = round(sum(a)/n)
+# round함수는 round_half_even 방식 (4.500일 경우 짝수쪽으로 감->4)
+# 0.5를 더해 값을 변경해주는 방식으로 사용하는 것이 좋음
+ave = (sum(a)/n) + 0.5
+ave = int(a)
+
+min = 2147000000
+for idx, x in enumerate(a):
+    tmp = abs(x-ave)
+    if tmp<min:
+        min = tmp
+        score = x
+        res = idx+1
+    elif tmp==min:
+        if x>score:
+            score = x
+            res = index + 1
+print(ave, res)
+
+"""
