@@ -33,7 +33,7 @@ a = list(map(int, input().split()))
 # round함수는 round_half_even 방식 (4.500일 경우 짝수쪽으로 감->4)
 # 0.5를 더해 값을 변경해주는 방식으로 사용하는 것이 좋음
 ave = (sum(a)/n) + 0.5
-ave = int(a)
+ave = int(ave)
 
 min = 2147000000
 for idx, x in enumerate(a):
