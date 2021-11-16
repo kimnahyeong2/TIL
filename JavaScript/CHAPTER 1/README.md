@@ -127,3 +127,31 @@ var word = 'NaHyeong'
 '+word' is good. '+word' like peach.'
 // word에 들어갈 단어를 한번에 바꿀 수 있음
 ```
+
+---
+
+## 제어할 태그 선택하기
+
+- 이벤트가 일어났을 때, 어떤 태그에 스타일이 지정될지 선택하는 작업이 필요
+- CSS 선택자 : 태그 선택자, class 선택자, id 선택자
+
+### querySelector
+
+- 선택자를 이용해 원하는 태그 선택 가능
+
+```jsx
+documnet.querySelector('body')
+documnet.querySelector('.this') // class 선택자
+documnet.querySelector('#that') // id 선택자
+```
+
+```jsx
+<input type="button" value="night" onclick="
+	documnet.querySelector('body').style.backgroundColor='black';
+	documnet.querySelector('body').style.color='white';
+">
+<input type="button" value="day" onclick="
+	documnet.querySelector('body').style.backgroundColor='white';
+	documnet.querySelector('body').style.color='black';
+">
+```
