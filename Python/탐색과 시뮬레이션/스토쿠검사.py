@@ -28,10 +28,10 @@ def two():
 
 result = one()
 if result == "NO":
-    print("zNO")
+    print("NO")
 else:
     result = two()
     if result == "NO":
-        print("dNO")
+        print("NO")
     else:
         print("YES")
