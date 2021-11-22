@@ -13,9 +13,9 @@ def one():
 
 def two():
     a = b = 0
-    cnt = 1
+    cnt = 0
     for _ in range(9):
-        k = [num_list[a,b], num_list[a,b+1], num_list[a,b+2], num_list[a+1,b], num_list[a+1,b+1], num_list[a+1,b+2], num_list[a+2,b], num_list[a+2,b+1], num_list[a+2,b+2]]
+        k = [num_list[a][b], num_list[a][b+1], num_list[a][b+2], num_list[a+1][b], num_list[a+1][b+1], num_list[a+1][b+2], num_list[a+2][b], num_list[a+2][b+1], num_list[a+2][b+2]]
         k = sorted(k)
         if k != number:
             return("NO")
