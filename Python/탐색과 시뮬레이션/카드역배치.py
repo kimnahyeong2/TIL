@@ -19,3 +19,15 @@ while cnt<10:
 del card_list[0]
 
 print(*card_list) #정수형 리스트를 []와 ,없이 출력하고 싶다면 *을 사용
+
+"""
+@ 다른 해결방식 @
+a = list(range(21))
+for _ in range(10):
+    s, e = map(int, input().split())
+    for i in range((e-s+1)//2):
+        a[s+i], a[e-i] = a[e-i], a[s+i] #스와프
+a.pop(0) # pop()은 맨 뒤에서부터 끄집어냄. pop(0)은 맨 앞에 있는걸 끄집어냄
+for x in a:
+    print(x, end=' ')
+"""

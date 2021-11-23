@@ -33,3 +33,28 @@ for i in range(len(N_list)):
 value_list.append(value2)
 
 print(max(value_list))
+
+"""
+@ 다른 해결방식 @
+n = int(input())
+a = [list(map(int, input().split())) for _ in range(n)]
+largest = -214700000
+for i in range(n):
+    sum1 = sum2 = 0
+    for j in range(n):
+        sum1 += a[i][j]
+        sum2 += a[j][i]
+    if sum1 > largest:
+        largest = sum1
+    if sum2 > largest:
+        largest = sum2
+sum1 = sum2 = 0
+for i in range(n):
+    sum1 += a[i][i]
+    sum2 += a[i][n-i-1]
+if sum1 > largest:
+    largest = sum1
+if sum2 > largest:
+    largest = sum2
+print(largest)
+"""

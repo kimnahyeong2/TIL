@@ -21,3 +21,28 @@ for a in N_list:
     else:
         print("#",cnt," NO")
     cnt += 1
+"""
+@ 다른 해결방식 1 @
+n = int(input())
+for i in range(n):
+    s = input()
+    s = s.upper() #모두 대문자로
+    size = len(s)
+    for j in range(size//2):
+        if s[j] != s[-1-j]: #맨마지막위치를 s[-1]로 출력이 가능
+            print("#%d NO" %(i+1))
+            break
+    else:
+        print("#%d YES" %(i+1))
+"""
+"""
+@ 다른 해결방식 2 @
+n = int(input())
+for i in range(n):
+    s = input()
+    s = s.upper() #모두 대문자로
+    if s==s[::-1]: # [::-1] 문자를 거꾸로 만들어줌
+        print("#%d YES" %(i+1))
+    else:
+        print("#%d NO" %(i+1))
+"""

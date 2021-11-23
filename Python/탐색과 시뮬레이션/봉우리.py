@@ -34,3 +34,22 @@ for k in range(1, N+1):
                         if N_list[k][s] > N_list[k][s+1]:
                             cnt += 1
 print(cnt)
+
+"""
+@ 다른 해결방식 @
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
+n = int(input())
+a = [list(map(int, input().split())) for _ in range(n)]
+a.insert(0, [0]*n) # 0번행에 0으로 이루어진 일차원 리스트 삽입
+a.append([0]*n)
+for x in a:
+    x.insert(0, 0)
+    x.append(0)
+cnt = 0
+for i in range(1, n+1):
+    for j in range(1, n+1):
+        if all(a[i][j]>a[i+dx[k]][j+dy[k]] for k in range(4)): # all() 모든 조건을 만족할 때에
+            cnt += 1
+print(cnt)
+"""

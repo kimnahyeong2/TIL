@@ -17,3 +17,27 @@ M_list = [m for m in map(int, input().split())]
 total_list = N_list + M_list
 total_list.sort()
 print(*total_list)
+
+"""
+@ 다른 해결방식 @
+# sort를 사용하면 시간복잡도가 NlogN이 됨. 효율성이 떨어지므로 다른 방법을 사용!
+n = int(input())
+a = list(map(int, input().split()))
+m = int(input())
+b = list(map(int, input().split()))
+p1 = p2 =0
+c = []
+while p1 < n and p2 < m:
+    if a[p1] <= b[p2]:
+        c.append(a[p1])
+        p1 += 1
+    else:
+        c.append(b[p2])
+        p2 += 1
+if p1 < n:
+    c = c + a[p1:]
+if p2 < m:
+    c = c + b[p2:]
+for x in c:
+    print(x, end=' ')
+"""
