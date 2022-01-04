@@ -2,7 +2,48 @@
 
 - 프로그램이 조건에 따라서 다른 기능들이 다른 순서에 따라서 실행되도록 만들어주는 것
 
-### 토글
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1> Conditional statements </h1>
+		<h2> Program </h2>
+		<script>
+			document.write("1<br>");
+			document.write("2<br>");
+			document.write("3<br>");
+			document.write("4<br>");
+		</script>
+		<h2>If-true</h2>
+		<script>
+			document.write("1<br>");
+            if(true){
+			    document.write("2<br>");
+            } else {
+                document.write("3<br>");
+            }			
+			document.write("4<br>");
+		</script>
+
+    <h2>If-false</h2>
+		<script>
+			document.write("1<br>");
+            if(false){
+			    document.write("2<br>");
+            } else {
+                document.write("3<br>");
+            }			
+			document.write("4<br>");
+		</script>
+	</body>
+</html>
+```
+
+- if() 괄호 안에는 불리언 데이터 타입이 옴
 
 ---
 
