@@ -12,6 +12,10 @@
 # 출력
 # 첫째 줄에 N개를 만들 수 있는 랜선의 최대 길이를 센티미터 단위의 정수로 출력한다.
 
+# @ 나의 문제 해결
+## 문제해결은 했지만 수가 커지면 오류가 뜸
+### 복잡도를 낮춘 문제해결방식이 필요함!!
+"""
 k , n = map(int, input().split())
 l = [int(input()) for i in range(k)]
 #print(k,n,len)
@@ -28,3 +32,28 @@ while k_sum >= 0:
         count = 0
         k_sum -= 1
 print(int(k_sum))
+"""
+
+# @ 결정알고리즘(이분검색)을 활용한 풀이방법
+
+def Count(len):
+    cnt = 0
+    for x in Line:
+        cnt += (x//len)
+    return cnt
+
+k , n = map(int, input().split())
+Line = [int(input()) for i in range(k)]
+res = 0
+
+lt = 1
+rt = max(Line)
+
+while lt <= rt:
+    mid = (lt + rt) // 2
+    if Count(mid) >= n:
+        res = mid
+        lt = mid + 1
+    else:
+        rt = mid - 1
+print(res)
