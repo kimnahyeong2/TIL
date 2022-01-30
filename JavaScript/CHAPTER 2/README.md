@@ -147,3 +147,91 @@
     </body>
 </html>
 ```
+
+---
+
+## 리팩토링 (중복의 제거)
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB1 - JavaScript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>WEB</h1>
+        <input id="night_day" type="button" value="night" onclick="
+            if (document.querySelector('#night_day').value === 'night'){
+                document.querySelector('body').style.backgroundColor = 'black';
+                document.querySelector('body').style.color = 'white';
+                document.querySelector('#night_day').value = 'day';
+            }
+            else {
+                document.querySelector('body').style.backgroundColor = 'white';
+                document.querySelector('body').style.color = 'black';
+                document.querySelector('#night_day').value = 'night';
+            }
+        ">
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+        <h2>JavaScript</h2>
+        <p>
+            JavaScript, often abbreviated as JS, is a high-level,
+            dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted
+            programming language. Alongside HTML and CSS, JavaScript is one of the three
+            core technologies of World Wide Web content production. It is used to make
+            webpages interactive and provide online programs, including video games. The
+            majority of websites employ it, and all modern web browsers support it
+            without the need for plug-ins by means of a built-in JavaScipt engine. Each
+            of the many JavaScript engines represent a different implementation of
+            JavaScript, all based on the ECMAScript specification, with some engines not
+            supporting the spec fully, and with many engines supporting additional
+            features beyond ECMA.
+        </p>
+
+        <input type="button" value="night" onclick="
+            var target = document.querySelector('body');
+            if (this.value === 'night'){
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                this.value = 'day';
+            }
+            else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                this.value = 'night';
+            }
+        ">
+        <input type="button" value="night" onclick="
+            var target = document.querySelector('body');
+            if (this.value === 'night'){
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                this.value = 'day';
+            }
+            else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                this.value = 'night';
+            }
+        ">
+    </body>
+</html>
+```
+
+### 리팩토링 - this 사용하기
+
+- 비효율적인 코드를 효율적으로 만들어서 가독성을 높이고 유지보수가 쉽도록 만드는 것
+- 코드의 기능적인 면에서는 변화가 없음
+- 자기 자신을 가리키기 위한 this 라는 키위드를 사용한다면, 코드를 복사하더라도 따로 id값을 바꿔줘야하는 작업을 진행할 필요없이 계속 사용 가능함
+
+### 리팩토링 - 중복 제거하기
+
+- 코딩을 할 때 중복을 제거해 주는 것이 중요함
+- 변수를 하나 만든 뒤 중복으로 사용된 태그를 찾아서 넣는다면, 변수만 간단하게 사용해 코드의 길이를 줄일 수 있음
+
+---
