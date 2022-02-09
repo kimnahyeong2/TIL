@@ -235,3 +235,63 @@
 - 변수를 하나 만든 뒤 중복으로 사용된 태그를 찾아서 넣는다면, 변수만 간단하게 사용해 코드의 길이를 줄일 수 있음
 
 ---
+
+## 반복문과 배열
+
+### 반복문
+
+- 같은 작업을 반복적으로 실행해주는 문법
+
+```jsx
+var links = document.querySelectorAll('a');
+var i = 0;
+while (i<links.length) {
+  links[i].style.color = 'powerblue';
+  i=i+1;
+}
+```
+
+### 배열
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1> Arrays </h1>
+		<h2> Syntax </h2>
+		<script>
+			var coworkers = ["egoing", "leezche"];
+		</script>
+
+		<h2> get </h2>
+		<script>
+			document.write(coworkers[0]);
+			document.write(coworkers[1]);
+		</script>
+
+		<h2> add </h2>
+		<script>
+			coworkers.push('duru');
+			coworkers.push('taeho'); #뒤쪽에 추가
+			coworkers.unshift('mina'); #앞쪽에 추가
+			coworkers.splice(2,0,'nari','dongbin'); #인덱스2의 위치에 2개의 요소 추가
+		</script>
+
+		<h2> remove </h2>
+		<script>
+			coworkers.pop(); #뒤쪽제거
+			coworkers.shift(); #앞쪽제거
+			coworkers.splice(2,1); #인덱스2부터 1개요소 제거
+		</script>
+
+		<h2> count </h2>
+		<script>
+			document.write(coworkers.length);
+		</script>
+	</body>
+</html>
+```
