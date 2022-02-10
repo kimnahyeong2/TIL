@@ -251,6 +251,30 @@ while (i<links.length) {
 }
 ```
 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Loop</h1>
+    <ul>
+      <script>
+        document.write('<li>1</li>');
+        var i = 0;
+        while(i<3){
+        document.write('<li>2</li>');
+        document.write('<li>3</li>');
+        i = i + 1;
+        }
+        document.write('<li>4</li>');
+      </script>
+    </ul>
+  </body>
+</html>
+```
+
 ### 배열
 
 ```html
@@ -293,5 +317,96 @@ while (i<links.length) {
 			document.write(coworkers.length);
 		</script>
 	</body>
+</html>
+```
+
+### 배열과 반복문
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Loop & Array</h1>
+    <script>
+      var coworkers = ['egoing', 'leezche', 'duru', 'taeho'];
+    </script>
+    <h2>Co workers</h2>
+    <ul>
+      <script>
+        var i = 0;
+        while(i < coworkers.length){
+          document.write('<li><a href="http://a.com/'+coworkers[i]+'">'+coworkers[i]+'</a></li>');
+          i = i + 1;
+      }
+      </script>
+    </ul>
+  </body>
+</html>
+```
+
+### 배열과 반복문의 활용
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB1 - JavaScript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1><a href="index.html" style="color:blue;">WEB</a></h1>
+
+        <input type="button" value="night" onclick="
+        var target = document.querySelector('body');
+        if (this.value === 'night'){
+            target.style.backgroundColor = 'black';
+            target.style.color = 'white';
+            this.value = 'day';
+
+            var alist = document.querySelectorAll('a');
+            var i = 0
+            while(i < alist.length){
+                alist[i].style.color = 'powderblue';
+                i = i + 1
+            }
+        }
+        else {
+            target.style.backgroundColor = 'white';
+            target.style.color = 'black';
+            this.value = 'night';
+            
+            var alist = document.querySelectorAll('a');
+            var i = 0
+            while(i < alist.length){
+                alist[i].style.color = 'blue';
+                i = i + 1
+            }
+        }
+        ">
+
+        <ol>
+            <li><a href="1.html">HTML</a></li>
+            <li><a href="2.html">CSS</a></li>
+            <li><a href="3.html">JavaScript</a></li>
+        </ol>
+
+        <h2>JavaScript</h2>
+        <p>
+            JavaScript, often abbreviated as JS, is a high-level,
+            dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted
+            programming language. Alongside HTML and CSS, JavaScript is one of the three
+            core technologies of World Wide Web content production. It is used to make
+            webpages interactive and provide online programs, including video games. The
+            majority of websites employ it, and all modern web browsers support it
+            without the need for plug-ins by means of a built-in JavaScipt engine. Each
+            of the many JavaScript engines represent a different implementation of
+            JavaScript, all based on the ECMAScript specification, with some engines not
+            supporting the spec fully, and with many engines supporting additional
+            features beyond ECMA.
+        </p>
+    </body>
 </html>
 ```
